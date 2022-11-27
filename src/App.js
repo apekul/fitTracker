@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Container } from "./Style/StyledComponents";
+import { AuthPanel } from "./Components/Authentication/AuthPanel";
+import { AppDisplay } from "./Components/Display/AppDisplay";
+
+// ReactRouter
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import PrivateRoute from "./PrivateRoute";
 
 function App() {
+  const [user, setUser] = useState();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Router>
+        <Routes>
+          <Route
+            // path="/"
+            // element={
+            //   <PrivateRoute user={user}>
+            //     <AppDisplay />
+            //   </PrivateRoute>
+            // }
+            path="/"
+            element={<AppDisplay />}
+          />
+          {/* <Route
+            path="/auth"
+            element={<AuthPanel setUser={setUser} user={user} />}
+          /> */}
+          <Route path="*" element={<div>PAGE NOT FOUND</div>} />
+        </Routes>
+      </Router>
+    </Container>
   );
 }
 
