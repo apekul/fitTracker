@@ -19,7 +19,7 @@ export const AppDisplay = () => {
     <>
       <DisplayItems itemList={itemList} setItemList={setItemList} />
       <div>
-        <FastAddItem itemList={itemList} setItemList={setItemList} />
+        {/* <FastAddItem itemList={itemList} setItemList={setItemList} /> */}
         <SlideComponent itemList={itemList} />
       </div>
     </>
