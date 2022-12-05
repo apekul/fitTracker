@@ -33,8 +33,7 @@ const DisplayItems = ({ setItemList, itemList }) => {
 
   return (
     <div className="container-margin">
-      <Group center>
-        <p>Add Item</p>
+      <Group center padding>
         <Input setItemList={setItemList} />
       </Group>
 
@@ -51,22 +50,16 @@ const DisplayItems = ({ setItemList, itemList }) => {
               <Group column>
                 <div className="list-group-button">
                   <span>{item.name}</span>
-                  <Button
-                    className="hover-red"
-                    onClick={() => removeItem(index)}
-                  >
-                    <MdDeleteForever />
+                  <Button onClick={() => removeItem(index)}>
+                    <MdDeleteForever size="1.5em" color="#34495e" />
                   </Button>
                 </div>
               </Group>
 
               <Group>
                 <span>{item.weight}g</span>
-                <Button
-                  className="hover-red"
-                  onClick={() => setQueryIndex(index)}
-                >
-                  <MdModeEditOutline />
+                <Button onClick={() => setQueryIndex(index)}>
+                  <MdModeEditOutline size="1.5em" color="#34495e" />
                 </Button>
               </Group>
               <Group marginRight>
@@ -89,11 +82,13 @@ const DisplayItems = ({ setItemList, itemList }) => {
 
       {/* Edit Item Component */}
       {queryIndex !== undefined && (
-        <EditItem
-          onEditItem={handleEditItem}
-          item={itemList[queryIndex]}
-          onClose={() => setQueryIndex(undefined)}
-        />
+        <Group>
+          <EditItem
+            onEditItem={handleEditItem}
+            item={itemList[queryIndex]}
+            onClose={() => setQueryIndex(undefined)}
+          />
+        </Group>
       )}
       <TotalCount itemList={itemList} />
     </div>

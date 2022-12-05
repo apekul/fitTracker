@@ -3,16 +3,7 @@ import DisplayItems from "./DisplayItems";
 import SlideComponent from "../Display/SlidePanel/SlideComponent";
 
 export const AppDisplay = () => {
-  const [itemList, setItemList] = useState([
-    {
-      name: "test Object",
-      weight: 1,
-      calories: 2,
-      carbs: 3,
-      protein: 4,
-      fat: 5,
-    },
-  ]);
+  const [itemList, setItemList] = useState([]);
 
   return (
     <>

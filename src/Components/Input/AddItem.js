@@ -17,17 +17,19 @@ export const AddItem = ({ setShow, setItemList }) => {
   return (
     <AddContainer>
       <div className="add-panel">
-        <Button className="hover-red" onClick={() => setShow(false)}>
-          <TiDeleteOutline size="20px" />
+        <Button onClick={() => setShow(false)}>
+          <TiDeleteOutline size="40px" color="white" />
         </Button>
-        <h2>Add Item</h2>
+        <div>
+          <h2>Add Panel</h2>
 
-        <InputContainer>
-          <AddItemInput onAddItem={handleAddItem} />
-          <Button background type="submit" form="form1">
-            Add
-          </Button>
-        </InputContainer>
+          <InputContainer>
+            <AddItemInput onAddItem={handleAddItem} />
+            <Button className="button-30" type="submit" form="form1">
+              Add
+            </Button>
+          </InputContainer>
+        </div>
       </div>
     </AddContainer>
   );

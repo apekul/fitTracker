@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { AddItem } from "./AddItem";
-import { CgAddR } from "react-icons/cg";
 import { Button } from "../../Style/StyledComponents";
 
 function Input({ setItemList }) {
@@ -8,8 +7,8 @@ function Input({ setItemList }) {
 
   return (
     <>
-      <Button addButton onClick={() => setShow(!show)}>
-        <CgAddR color="white" />
+      <Button className="button-30" onClick={() => setShow(!show)}>
+        ADD ITEM
       </Button>
       {show && <AddItem setShow={setShow} setItemList={setItemList} />}
     </>
