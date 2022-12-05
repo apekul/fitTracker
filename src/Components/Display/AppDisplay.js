@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import DisplayItems from "./DisplayItems";
 import SlideComponent from "../Display/SlidePanel/SlideComponent";
-import FastAddItem from "../Input/FastAddItem";
 
 export const AppDisplay = () => {
   const [itemList, setItemList] = useState([
@@ -19,7 +18,6 @@ export const AppDisplay = () => {
     <>
       <DisplayItems itemList={itemList} setItemList={setItemList} />
       <div>
-        {/* <FastAddItem itemList={itemList} setItemList={setItemList} /> */}
         <SlideComponent itemList={itemList} />
       </div>
     </>
